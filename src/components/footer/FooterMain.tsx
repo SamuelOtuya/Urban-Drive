@@ -2,59 +2,43 @@
 "use client";
 
 import { Footer } from "flowbite-react";
-import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
+import { FaFacebook, FaInstagram, FaPhoneAlt, FaTwitter } from "react-icons/fa";
+import { FaLocationPin } from "react-icons/fa6";
+import { IoMail } from "react-icons/io5";
 
 export function FooterMain() {
   return (
-    <Footer bgDark>
-      <div className="w-full">
-        <div className="grid w-full grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
-          <div>
-            <Footer.Title title="Company" />
-            <Footer.LinkGroup col>
-              <Footer.Link href="#">About</Footer.Link>
-              <Footer.Link href="#">Careers</Footer.Link>
-              <Footer.Link href="#">Brand Center</Footer.Link>
-              <Footer.Link href="#">Blog</Footer.Link>
-            </Footer.LinkGroup>
-          </div>
-          <div>
-            <Footer.Title title="help center" />
-            <Footer.LinkGroup col>
-              <Footer.Link href="#">Discord Server</Footer.Link>
-              <Footer.Link href="#">Twitter</Footer.Link>
-              <Footer.Link href="#">Facebook</Footer.Link>
-              <Footer.Link href="#">Contact Us</Footer.Link>
-            </Footer.LinkGroup>
-          </div>
-          <div>
-            <Footer.Title title="legal" />
-            <Footer.LinkGroup col>
-              <Footer.Link href="#">Privacy Policy</Footer.Link>
-              <Footer.Link href="#">Licensing</Footer.Link>
-              <Footer.Link href="#">Terms &amp; Conditions</Footer.Link>
-            </Footer.LinkGroup>
-          </div>
-          <div>
-            <Footer.Title title="download" />
-            <Footer.LinkGroup col>
-              <Footer.Link href="#">iOS</Footer.Link>
-              <Footer.Link href="#">Android</Footer.Link>
-              <Footer.Link href="#">Windows</Footer.Link>
-              <Footer.Link href="#">MacOS</Footer.Link>
-            </Footer.LinkGroup>
+    <Footer className="bg-slate-950 text-white py-8">
+       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 className="text-xl font-bold mb-4">Contact</h3>
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              {/* <MapPin size={20} /> */}
+              <FaLocationPin/>
+              <span>KIAMBU ROAD - BYPASS JUNCTION</span>
+            </div>
+            <div className="flex items-center gap-2">
+              {/* <Mail size={20} /> */}
+              <IoMail/>
+              <span>info@urbandrive.co.ke</span>
+            </div>
+            <div className="flex items-center gap-2">
+              {/* <Phone size={20} /> */}
+              <FaPhoneAlt/>
+              <span>+254 770070300</span>
+            </div>
           </div>
         </div>
-        <div className="w-full bg-gray-700 px-4 py-6 sm:flex sm:items-center sm:justify-between">
-          <Footer.Copyright href="#" by="Flowbite™" year={2022} />
-          <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-            <Footer.Icon href="#" icon={BsFacebook} />
-            <Footer.Icon href="#" icon={BsInstagram} />
-            <Footer.Icon href="#" icon={BsTwitter} />
-            <Footer.Icon href="#" icon={BsGithub} />
-            <Footer.Icon href="#" icon={BsDribbble} />
+        <div>
+          <h3 className="text-xl font-bold mb-4">Follow Us</h3>
+          <div className="flex gap-4">
+            <a href="#" className="hover:text-orange-500"><FaFacebook/></a>
+            <a href="#" className="hover:text-orange-500"><FaTwitter/></a>
+            <a href="#" className="hover:text-orange-500"><FaInstagram/></a>
           </div>
         </div>
+        
       </div>
     </Footer>
   );
