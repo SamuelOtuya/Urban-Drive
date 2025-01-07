@@ -8,7 +8,7 @@ import { IoMail } from "react-icons/io5";
 
 export function FooterMain() {
   return (
-    <Footer className="bg-slate-950 text-white py-8">
+          <Footer className="bg-slate-950 text-white py-8">
        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h3 className="text-xl font-bold mb-4">Contact</h3>
@@ -38,8 +38,43 @@ export function FooterMain() {
             <a href="#" className="hover:text-orange-500"><FaInstagram/></a>
           </div>
         </div>
+      
+
         
-      </div>
+    <div className="border-t border-white md:col-span-2"></div>
+    <Footer.Copyright href="#" by="Flowbite™" year={2022}>
+          <span className="mx-2">|</span>
+          <a
+            href="/privacy-policy"
+            className="text-white hover:text-blue-600"
+          >
+            Privacy Policy
+          </a>
+          <span className="mx-2">|</span>
+          <a
+            href="/terms-of-service"
+            className="text-white hover:text-blue-600"
+          >
+            Terms of Service
+          </a>
+          <span className="mx-2">|</span>
+          <a
+            href="/contact"
+            className="text-white hover:text-blue-600"
+          >
+            Contact Us
+          </a>
+          <span className="mx-2">|</span>
+          <a
+            href="/about-us"
+            className="text-white hover:text-blue-600"
+          >
+            About Us
+          </a>
+        </Footer.Copyright>
+        </div>
     </Footer>
+  
+  
   );
 }

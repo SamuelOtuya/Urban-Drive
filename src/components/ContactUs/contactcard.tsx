@@ -1,31 +1,31 @@
 
 "use client";
 
-import { Button, Checkbox, Label, TextInput } from "flowbite-react";
+import { Button,Label, TextInput } from "flowbite-react";
 
 export function Contact() {
   return (
-    <form className="flex max-w-md flex-col gap-4">
+    <form className="flex max-w-md flex-col gap-4 justify-between p-10 ml-10">
       <div>
         <div className="mb-2 block">
-          <Label htmlFor="email2" value="Your email" />
+          <Label htmlFor="Name" value="Your Name" />
         </div>
-        <TextInput id="email2" type="email" placeholder="name@flowbite.com" required shadow />
+        <TextInput id="Name" type="Name" placeholder="Name" required shadow />
       </div>
       <div>
         <div className="mb-2 block">
-          <Label htmlFor="password2" value="Your password" />
+          <Label htmlFor="email" value="Email" />
         </div>
-        <TextInput id="password2" type="password" required shadow />
+        <TextInput id="email" type="email" placeholder="urbandrive@gmail.com" required shadow />
       </div>
       <div>
-        <div className="mb-2 block">
-          <Label htmlFor="repeat-password" value="Repeat password" />
+        <div className="mb-2  block">
+          <Label htmlFor="message" value="Message" />
         </div>
-        <TextInput id="repeat-password" type="password" />
+        <TextInput id="Message" type="message" placeholder="Write your message here"/>
       </div>
       
-      <Button type="submit">Send a message</Button>
+      <Button className="bg-orange-500" type="submit">Send a message</Button>
     </form>
   );
 }

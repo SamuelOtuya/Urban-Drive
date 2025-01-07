@@ -3,7 +3,6 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebook, FaTwitter, FaWhatsapp 
 import { MdDriveEta, MdLocalOffer } from 'react-icons/md';
 import { BsTelephoneForward } from 'react-icons/bs';
 import { Slider } from '../About/slider';
-import aboutus from '../../assets/aboutus.png';
 import Map from '../Map';
 import { VehicleCard } from './VehicleCard';
 
@@ -103,12 +102,12 @@ export default function CarDetails() {
         </div>
       </div>
       <span className='font-bold text-3xl'>Related Posts</span>
-<div className='flex'>
-    <VehicleCard/>
-    <VehicleCard/>
-    <VehicleCard/>
-    <VehicleCard/>
-    <VehicleCard/>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-2">
+  <VehicleCard />
+  <VehicleCard />
+  <VehicleCard />
+  <VehicleCard />
+ 
 </div>
     </div>
     
