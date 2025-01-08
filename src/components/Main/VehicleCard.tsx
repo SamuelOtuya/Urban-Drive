@@ -3,17 +3,18 @@ import { FaCalendarAlt, FaCar } from "react-icons/fa";
 import { GiGasPump } from "react-icons/gi";
 import car from "../../assets/car.png";
 import { useNavigate } from "react-router-dom";
+import { VehicleType } from "../../types/types";
 
-export function VehicleCard() {
-  const Navigate = useNavigate();
+export function VehicleCard({vehicle}:{vehicle:VehicleType}) {
+  const navigate = useNavigate();
 
   return (
     <Card
-      onClick={() => Navigate("/single-car")}
+      onClick={() => navigate(`/single-car/${vehicle.id}-${vehicle.make}-${vehicle.model}`)}
       renderImage={() => (
         <div className="max-w-sm relative">
           <img 
-            src={car} 
+            src={vehicle.images} 
             alt="Toyota HiAce" 
             className="w-full h-48 object-cover rounded-t-lg sm:h-60 md:h-72 lg:h-80"
           />
@@ -29,10 +30,10 @@ export function VehicleCard() {
       )}
     >
       <h4 className="text-xl font-bold text-orange-500 sm:text-xl md:text-xl">
-        Toyota HiAce
+        {vehicle.title}
       </h4>
       <h3 className="text-xl font-bold text-gray-900 sm:text-xl md:text-xl">
-        Ksh 2,950,000
+        {vehicle.price}
       </h3>
       <div className="flex flex-wrap items-center justify-between text-gray-600 space-x-4">
         <div className="flex items-center gap-1 text-sm sm:text-base">
@@ -41,11 +42,11 @@ export function VehicleCard() {
         </div>
         <div className="flex items-center gap-1 text-sm sm:text-base">
           <FaCalendarAlt />
-          <span>2016</span>
+          <span>{vehicle.year}</span>
         </div>
         <div className="flex items-center gap-1 text-sm sm:text-base">
           <GiGasPump />
-          <span>Diesel</span>
+          <span>{vehicle.fuel_type}</span>
         </div>
       </div>
     </Card>

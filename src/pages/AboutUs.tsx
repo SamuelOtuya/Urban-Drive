@@ -1,7 +1,7 @@
 import { FaHeart, FaPhoneAlt } from "react-icons/fa";
 import { HiSpeakerphone } from "react-icons/hi";
 import aboutus from "../assets/aboutus.png";
-import { Slider } from "../components/About/slider";
+// import { Slider } from "../components/About/slider";
 import vid from "../assets/vid.jpg";
 
 const AboutUs = () => {
@@ -75,7 +75,7 @@ const AboutUs = () => {
             </ul>
           </div>
           <div className="rounded-lg shadow-lg bg-white">
-            <Slider />
+            {/* <Slider/> */}
           </div>
         </div>
       </div>
