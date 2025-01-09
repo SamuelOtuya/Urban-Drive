@@ -9,7 +9,7 @@ interface SliderProps {
 
 export function Slider({ images }: SliderProps) {
   return (
-    <div className="h-56 sm:h-64 xl:h-80 2xl:h-96 object-contain">
+    <div className="relative h-56 sm:h-64 xl:h-80 2xl:h-96 w-full">
       <Carousel>
         
         {images.map((image, index) => (
@@ -17,6 +17,7 @@ export function Slider({ images }: SliderProps) {
             key={index}
             src={image}
             alt={image || `carousel-image-${index}`} 
+            className="h-full w-full"
           />
         ))}
       </Carousel>

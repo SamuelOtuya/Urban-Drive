@@ -26,7 +26,7 @@ export function DesktopHeader() {
   return (
     <div>
       {/* Top Header */}
-      <div className="bg-orange-500 text-white p-4">
+      <div className="bg-orange-500 text-white p-2">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex gap-4">
             <FaFacebook />
@@ -47,7 +47,7 @@ export function DesktopHeader() {
 
       {/* Navigation */}
       <div>
-        <nav className="bg-gray-100 p-4">
+        <nav className="bg-[#e2d9ce] p-4">
           <div className="container mx-auto flex justify-between items-center">
             <div>
               <img src={logo} alt="Urban Drive Logo" className="h-8 w-25" />

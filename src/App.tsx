@@ -6,6 +6,7 @@ import AboutUs from "./pages/AboutUs";
 import { ContactUs } from "./pages/ContactUs";
 import FAQs from "./pages/FAQs";
 import SingleCar from "./pages/SingleCar";
+import SearchPage from "./pages/SearchPage";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/contact" element={<ContactUs/>}/>
         <Route path="/faqs" element={<FAQs/>}/>
         <Route path="/single-car/:id" element={<SingleCar/>}/>
+        <Route path="/search" element={<SearchPage/>}/>
       </Routes>
     </DefaultLayout>
   );

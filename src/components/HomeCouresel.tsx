@@ -8,7 +8,7 @@ const data = [i1, i2];
 
 export function HomeCouresel() {
   return (
-    <div className="h-full sm:h-64 md:h-[700px] xl:h-80 2xl:h-96 w-full">
+    <div className="relative h-full sm:h-64 md:h-[700px] xl:h-96 2xl:h-96 w-full">
       <Carousel leftControl="" rightControl="">
         {data.map((banner, i) => {
           return (
@@ -16,7 +16,7 @@ export function HomeCouresel() {
               key={i}
               src={banner}
               alt="..."
-              className="h-full w-full object-cover"
+              className="h-full w-full"
             />
           );
         })}
