@@ -1,4 +1,5 @@
 import aboutus from '../assets/aboutus.png'
+import QuestionBoxWithFAQ from '../components/FAQ/questions'
 
 const FAQs = () => {
   return (
@@ -14,7 +15,12 @@ const FAQs = () => {
       <span>Home / About Us</span>
     </nav>
     </div>
+    <div className='flex-grow pt-10'>
+    <QuestionBoxWithFAQ/>
+    </div>
+   
   </div> 
+  
   )
 }
 

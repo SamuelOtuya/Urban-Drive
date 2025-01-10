@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import API from "../../api/API";
 import { useNavigate } from "react-router-dom";
 
 const SearchForm = () => {
   const navigate = useNavigate();
+  const [isSticky, setIsSticky] = useState(false);
 
   const makes:{name:string,value:number}[] = JSON.parse(localStorage.getItem("makes") || "[]")
   const [models,setModels] = useState<{name:string,value:number}[]>([]);
@@ -32,10 +33,25 @@ const SearchForm = () => {
     navigate("/search",{state:{...data}})
   }
   
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
 
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
+  
   return (
-    <div className="container mx-auto -mt-8 mb-8 px-4">
+    <div className={`container mx-auto px-4 transition-all duration-300 ${
+      isSticky ? "fixed top-0 left-0 right-0 z-50 bg-white shadow-lg" : "relative -mt-8 mb-8"
+    }`}
+    >
       <div className="bg-white p-4 rounded-lg shadow-lg flex flex-col sm:flex-row gap-4">
         <select onChange={(e)=>{
           setSelectedMake(Number(e.target.value));
@@ -75,6 +91,9 @@ const SearchForm = () => {
         </button>
       </div>
     </div>
+    
+
+    
   );
 };
 

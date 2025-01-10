@@ -12,11 +12,12 @@ export function VehicleCard({vehicle}:{vehicle:VehicleType}) {
     <Card
       onClick={() => navigate(`/single-car/${vehicle.id}-${vehicle.make}-${vehicle.model}`)}
       renderImage={() => (
+        
         <div className="max-w-sm relative">
           <img 
             src={vehicle.images} 
             alt="Toyota HiAce" 
-            className="w-full h-48 object-cover rounded-t-lg sm:h-60 md:h-72 lg:h-80"
+            className="w-full h-48 object-cover rounded-t-lg sm:h-60 md:h-72 lg:h-80 transition-transform duration-300 ease-out-in transform hover:scale-110"
           />
           <div className="absolute bottom-2 left-8 flex gap-2">
             <span className="bg-orange-500 text-white px-2 py-1 rounded-md text-xs sm:text-sm">
@@ -27,6 +28,7 @@ export function VehicleCard({vehicle}:{vehicle:VehicleType}) {
             </span>
           </div>
         </div>
+        
       )}
     >
       <h4 className="text-xl font-bold text-orange-500 sm:text-xl md:text-xl">

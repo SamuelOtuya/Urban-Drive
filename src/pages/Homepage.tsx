@@ -4,7 +4,9 @@ import SearchForm from "../components/Main/SearchForm";
 import { VehicleCard } from "../components/Main/VehicleCard";
 import { VehicleType } from "../types/types";
 import API from "../api/API";
-import BrandCarousel from "../components/Main/BrandsCouresel";
+import LogoCarousel from "../components/Main/logoCouresel";
+import ad1 from "../assets/ad1.png";
+// import BrandCarousel from "../components/Main/BrandsCouresel";
 
 const Homepage = () => {
   const [loading,setLoading] = useState<boolean>(false);
@@ -45,8 +47,10 @@ const Homepage = () => {
     <div>
      <div className="h-full"><HomeCouresel/></div>
      <div className="m-5">
-     <div className="m-5 justify-center items-center text-b ">Latest Vehicles</div>
-     <div className="m-5 border-t border-orange-600 md:col-span-2"></div>
+     <div className="m-5 justify-center flex text-2xl font-bold">
+      Latest Vehicles
+      </div>
+     <div className="border-t border-orange-600 md:col-span-2"></div>
      
      <div className="pt-10"><SearchForm/></div>
      
@@ -61,13 +65,21 @@ const Homepage = () => {
       }
 </div>
 
-{/* <div className="flex justify-center mb-8 px-4">
+<div className="flex justify-center mb-8 px-4 mt-2">
         <button className="bg-orange-500 text-white px-6 py-2 rounded hover:bg-orange-600 transition-colors">
           View all our stock
         </button>
-      </div> */}
+      </div>
+      <LogoCarousel/>
 
-<BrandCarousel/>
+      <div className="flex space-x-4 "
+          >
+  <img src={ad1} alt="Image 1" className="w-1/2 h-auto object-contain transition-transform duration-300 ease-out-in transform hover:scale-110" />
+  <img src={ad1} alt="Image 2" className="w-1/2 h-auto object-contain transition-transform duration-300 ease-out-in transform hover:scale-110" />
+</div>
+
+
+{/* <BrandCarousel/> */}
 
     </div>
     </div>
