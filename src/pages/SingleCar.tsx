@@ -68,91 +68,94 @@ export default function CarDetails() {
       <div className="grid md:grid-cols-3 gap-8">
         {/* Car Images and Details */}
         <div className="md:col-span-2">
-          <div className="flex justify-between items-start mb-6">
-            <div>
-              <h1 className="text-2xl font-bold">{vehicle?.title}</h1>
-              <p className="text-xl font-semibold text-orange-500">{vehicle?.price}</p>
-            </div>
-          </div>
+  {/* Vehicle Title and Price */}
+  <div className="flex justify-between items-start mb-6">
+    <div>
+      <h1 className="text-2xl font-bold">{vehicle?.title}</h1>
+      <p className="text-xl font-semibold text-orange-500">{vehicle?.price}</p>
+    </div>
+  </div>
 
-          <div className="mb-8">
-            <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
-                  <Slider images={singleVehicleImages}/>
-                </div>
-            <div className="grid grid-cols-4 gap-2">
-            </div>
-          </div>
-          
+  {/* Image Slider */}
+  <div className="mb-6">
+    <div className="w-full h-auto">
+      <Slider images={singleVehicleImages} />
+    </div>
+  </div>
 
-          <div className="border-t border-gray-200 pt-6">
-            <div className="flex gap-4 mb-6">
-            <button 
-            onClick={() => setActiveTab('specifications')}
-            className={`flex-1 py-2 px-4 rounded-md text-sm sm:text-base
-              ${activeTab === 'specifications' 
-                ? 'bg-gray-200 font-medium' 
-                : 'bg-gray-100 hover:bg-gray-200'
-              }`}
-          >
-            Specifications
-          </button>
-          <button 
-            onClick={() => setActiveTab('features')}
-            className={`flex-1 py-2 px-4 rounded-md text-sm sm:text-base
-              ${activeTab === 'features' 
-                ? 'bg-gray-200 font-medium' 
-                : 'bg-gray-100 hover:bg-gray-200'
-              }`}
-          >
-            Features & Option
-          </button>
-          <button 
-            onClick={() => setActiveTab('overview')}
-            className={`flex-1 py-2 px-4 rounded-md text-sm sm:text-base
-              ${activeTab === 'overview' 
-                ? 'bg-gray-200 font-medium' 
-                : 'bg-gray-100 hover:bg-gray-200'
-              }`}
-          >
-            Overview
-          </button>
+  {/* Tabs for Specifications, Features, and Overview */}
+  <div className="border-t border-gray-200 mt-4">
+    <div className="flex gap-4 mb-6">
+      <button
+        onClick={() => setActiveTab('specifications')}
+        className={`flex-1 py-2 px-4 rounded-md text-sm sm:text-base
+          ${activeTab === 'specifications'
+            ? 'bg-gray-200 font-medium'
+            : 'bg-gray-100 hover:bg-gray-200'
+          }`}
+      >
+        Specifications
+      </button>
+      <button
+        onClick={() => setActiveTab('features')}
+        className={`flex-1 py-2 px-4 rounded-md text-sm sm:text-base
+          ${activeTab === 'features'
+            ? 'bg-gray-200 font-medium'
+            : 'bg-gray-100 hover:bg-gray-200'
+          }`}
+      >
+        Features & Option
+      </button>
+      <button
+        onClick={() => setActiveTab('overview')}
+        className={`flex-1 py-2 px-4 rounded-md text-sm sm:text-base
+          ${activeTab === 'overview'
+            ? 'bg-gray-200 font-medium'
+            : 'bg-gray-100 hover:bg-gray-200'
+          }`}
+      >
+        Overview
+      </button>
+    </div>
+
+    {/* Content for Active Tab */}
+    <div className="mt-4">
+      {activeTab === 'specifications' && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {Object.entries(specifications).map(([key, value]) => (
+            <div key={key} className="bg-gray-50 p-3 rounded-md">
+              <span className="font-medium text-gray-700">{key}: </span>
+              <span className="text-gray-600">{value}</span>
+            </div>
+          ))}
         </div>
+      )}
 
-        <div className="mt-4">
-          {activeTab === 'specifications' && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {Object.entries(specifications).map(([key, value]) => (
-                <div key={key} className="bg-gray-50 p-3 rounded-md">
-                  <span className="font-medium text-gray-700">{key}: </span>
-                  <span className="text-gray-600">{value}</span>
-                </div>
-              ))}
+      {activeTab === 'features' && (
+        <div className="space-y-2">
+          {vehicleFeatures.map((feature, index) => (
+            <div key={index} className="flex items-center justify-between bg-gray-50 p-3 rounded-md">
+              <span className="text-gray-700">{feature}</span>
+              <FaCheck className="text-green-500 w-5 h-5" />
             </div>
-          )}
-
-          {activeTab === 'features' && (
-            <div className="space-y-2">
-              {vehicleFeatures.map((feature) => (
-                <div 
-                  className="flex items-center justify-between bg-gray-50 p-3 rounded-md">
-                  <span className="text-gray-700">{feature}</span>
-                  <FaCheck className="text-green-500 w-5 h-5" />
-                </div>
-              ))}
-            </div>
-          )}
-
-          {activeTab === 'overview' && (
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Overview</h3>
-              <p className="text-gray-700">
-                {vehicle?.title} {vehicle?.engine_size} {vehicle?.fuel_type} {vehicle?.year} {vehicle?.model}
-              </p>
-            </div>
-          )}
-          </div>
+          ))}
         </div>
+      )}
+
+      {activeTab === 'overview' && (
+        <div>
+          <h3 className="text-xl font-semibold mb-2">Overview</h3>
+          <p className="text-gray-700">
+            {vehicle?.title} {vehicle?.engine_size} {vehicle?.fuel_type} {vehicle?.year} {vehicle?.model}
+          </p>
         </div>
+      )}
+    </div>
+  </div>
+</div>
+
+        
+  
 
 
         <div className="space-y-4">
@@ -167,7 +170,7 @@ export default function CarDetails() {
             <BsTelephoneForward className="mr-2" /> Request a call Back
           </Button>
           <Button color="success" className="w-full">
-            <FaWhatsapp className="mr-2" /> WhatsApp Message
+            <FaWhatsapp className="mr-2" href='https://api.whatsapp.com/send?phone=254770070300'/> WhatsApp Message
           </Button>
 
           <div className="bg-white p-4 rounded-lg shadow mt-6">
@@ -198,7 +201,7 @@ export default function CarDetails() {
                 <FaTwitter className="text-white" />
               </button>
               <button className="p-2 bg-green-500 rounded-full">
-                <FaWhatsapp className="text-white" />
+                <FaWhatsapp href='https://api.whatsapp.com/send?phone=254770070300' className="text-white" />
               </button>
             </div>
           </div>

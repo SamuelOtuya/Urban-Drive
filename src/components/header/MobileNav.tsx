@@ -50,28 +50,34 @@ export function MobileNav() {
                 <Sidebar.Items>
                   <Sidebar.ItemGroup>
                     <Sidebar.Item href="/" icon={HiChartPie}>
-                      Dashboard
+                      Home
                     </Sidebar.Item>
                     <Sidebar.Item
-                      href="/e-commerce/products"
+                      href="/find-car"
                       icon={HiShoppingBag}
                     >
-                      Products
+                      Find a Car
                     </Sidebar.Item>
-                    <Sidebar.Item href="/users/list" icon={HiUsers}>
-                      Users list
+                    <Sidebar.Item href="/about" icon={HiUsers}>
+                      About Us
                     </Sidebar.Item>
-                    <Sidebar.Item href="/authentication/sign-in" icon={HiLogin}>
-                      Sign in
+                    <Sidebar.Item href="/contact" icon={HiLogin}>
+                      Contact Us
                     </Sidebar.Item>
                     <Sidebar.Item
-                      href="/authentication/sign-up"
+                      href="/blogs"
                       icon={HiPencil}
                     >
-                      Sign up
+                      Blogs
+                    </Sidebar.Item>
+                    <Sidebar.Item
+                      href="/faqs"
+                      icon={HiPencil}
+                    >
+                      FAQs
                     </Sidebar.Item>
                   </Sidebar.ItemGroup>
-                  <Sidebar.ItemGroup>
+                  {/* <Sidebar.ItemGroup>
                     <Sidebar.Item
                       href="https://github.com/themesberg/flowbite-react/"
                       icon={HiClipboard}
@@ -90,7 +96,7 @@ export function MobileNav() {
                     >
                       Help
                     </Sidebar.Item>
-                  </Sidebar.ItemGroup>
+                  </Sidebar.ItemGroup> */}
                 </Sidebar.Items>
               </div>
             </div>

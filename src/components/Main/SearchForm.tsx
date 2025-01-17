@@ -57,7 +57,7 @@ const SearchForm = () => {
           setSelectedMake(Number(e.target.value));
           getModelsAsync(Number(e.target.value))
         }} 
-        className="flex-1 p-2 border rounded">
+        className="flex-1 p-2 border-orange-500  rounded">
           <option>Choose Make</option>
           {
             makes.map((m,i)=>{
@@ -69,7 +69,7 @@ const SearchForm = () => {
         </select>
         <select onChange={(e)=>{
           setSelectedModel(Number(e.target.value))
-        }} className="flex-1 p-2 border rounded">
+        }} className="flex-1 p-2 border-orange-500 rounded">
           <option>Choose Model</option>
           {
             models.map((m,i)=>{
@@ -79,12 +79,16 @@ const SearchForm = () => {
             })
           }
         </select>
-        <select onChange={(e)=>setmax_price(Number(e.target.value))} className="flex-1 p-2 border rounded">
+        <select onChange={(e)=>setmax_price(Number(e.target.value))} className="flex-1 p-2 border-orange-500  rounded">
           <option>Select Budget</option>
           <option value="600000">KES {(600000).toLocaleString()}</option>
           <option value="700000">KES {(700000).toLocaleString()}</option>
           <option value="800000">KES {(800000).toLocaleString()}</option>
           <option value="1000000">KES {(1000000).toLocaleString()}</option>
+          <option value="2000000">KES {(2000000).toLocaleString()}</option>
+          <option value="5000000">KES {(5000000).toLocaleString()}</option>
+          <option value="10000000">KES {(10000000).toLocaleString()}</option>
+          <option value="20000000">KES {(20000000).toLocaleString()}</option>
         </select>
         <button onClick={onSearchPress} className="bg-orange-500 text-white px-6 py-2 rounded w-full sm:w-auto">
           Find a Car

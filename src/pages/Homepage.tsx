@@ -6,6 +6,7 @@ import { VehicleType } from "../types/types";
 import API from "../api/API";
 import LogoCarousel from "../components/Main/logoCouresel";
 import ad1 from "../assets/ad1.png";
+import BlogComponent from "../components/Main/Blogcouresel";
 // import BrandCarousel from "../components/Main/BrandsCouresel";
 
 const Homepage = () => {
@@ -72,11 +73,24 @@ const Homepage = () => {
       </div>
       <LogoCarousel/>
 
-      <div className="flex space-x-4 "
-          >
-  <img src={ad1} alt="Image 1" className="w-1/2 h-auto object-contain transition-transform duration-300 ease-out-in transform hover:scale-110" />
-  <img src={ad1} alt="Image 2" className="w-1/2 h-auto object-contain transition-transform duration-300 ease-out-in transform hover:scale-110" />
+      <div className="flex space-x-4 overflow-hidden w-full max-w-screen-lg mx-auto">
+  <div className="w-1/2 overflow-hidden">
+    <img
+      src={ad1}
+      alt="Image 1"
+      className="w-full h-full object-contain transition-transform duration-300 ease-in-out hover:scale-110"
+    />
+  </div>
+  <div className="w-1/2 overflow-hidden">
+    <img
+      src={ad1}
+      alt="Image 2"
+      className="w-full h-full object-contain transition-transform duration-300 ease-in-out hover:scale-110"
+    />
+  </div>
 </div>
+<BlogComponent/>
+
 
 
 {/* <BrandCarousel/> */}

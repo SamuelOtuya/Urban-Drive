@@ -29,11 +29,11 @@ export function DesktopHeader() {
       <div className="bg-orange-500 text-white p-3">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex gap-4">
-            <FaFacebook />
-            <FaTwitter />
-            <FaInstagram />
-            <FaWhatsapp />
-            <FaPhoneAlt />
+            <FaFacebook href="https://www.facebook.com/urbandriveautosltd/"/>
+            <FaTwitter href="https://x.com/UrbanDriveAutos?t=FqAaqFH3g5-vusYu4zKAuw"/>
+            <FaInstagram href="https://www.instagram.com/urbandriveautos/"/>
+            <FaWhatsapp href="https://api.whatsapp.com/send?phone=254770070300"/>
+            <FaPhoneAlt href=""/>
             <span>(+254) 770070300</span>
             <IoMail />
             <span>info@urbandrive.co.ke</span>

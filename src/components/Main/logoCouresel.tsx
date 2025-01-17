@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FaChevronCircleLeft, FaChevronCircleRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 // Define the type for the brand data
 interface Brand {
@@ -75,14 +75,14 @@ const LogoCarousel = () => {
         onClick={handlePrevious}
         className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 rounded-full p-2 shadow-lg hover:bg-white transition-colors"
       >
-        <FaChevronLeft className="w-6 h-6" />
+        <FaChevronLeft className="w-6 h-6 text-orange-500" />
       </button>
       
       <button
         onClick={handleNext}
         className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 rounded-full p-2 shadow-lg hover:bg-white transition-colors"
       >
-        <FaChevronRight className="w-6 h-6" />
+        <FaChevronRight className="w-6 h-6 text-orange-500" />
       </button>
 
       {/* Logo Container */}

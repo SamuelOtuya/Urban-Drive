@@ -30,13 +30,13 @@ export const ContactUs = () => {
               <div>
                   <h3 className="text-gray-600 mb-3">Social Share</h3>
                   <div className="flex space-x-4">
-                      <a href="#" className="bg-blue-600 p-2 rounded-full text-white hover:bg-blue-700">
+                      <a href="#https://www.facebook.com/urbandriveautosltd/" className="bg-blue-600 p-2 rounded-full text-white hover:bg-blue-700">
                           <FaFacebook size={20} />
                       </a>
-                      <a href="#" className="bg-blue-400 p-2 rounded-full text-white hover:bg-blue-500">
+                      <a href="#https://x.com/UrbanDriveAutos?t=FqAaqFH3g5-vusYu4zKAuw" className="bg-blue-400 p-2 rounded-full text-white hover:bg-blue-500">
                           <FaTwitter size={20} />
                       </a>
-                      <a href="#" className="bg-red-500 p-2 rounded-full text-white hover:bg-red-600">
+                      <a href="#https://www.instagram.com/urbandriveautos/" className="bg-red-500 p-2 rounded-full text-white hover:bg-red-600">
                           <FaInstagram size={20} />
                       </a>
                       <a href="#" className="bg-blue-700 p-2 rounded-full text-white hover:bg-blue-800">

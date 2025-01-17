@@ -33,9 +33,9 @@ export function FooterMain() {
         <div>
           <h3 className="text-xl font-bold mb-4">Follow Us</h3>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-orange-500"><FaFacebook/></a>
-            <a href="#" className="hover:text-orange-500"><FaTwitter/></a>
-            <a href="#" className="hover:text-orange-500"><FaInstagram/></a>
+            <a href="https://www.facebook.com/urbandriveautosltd/" className="hover:text-orange-500 text-blue-800 text-2xl"><FaFacebook/></a>
+            <a href="https://x.com/UrbanDriveAutos?t=FqAaqFH3g5-vusYu4zKAuw" className="hover:text-orange-500 text-blue-500 text-2xl"><FaTwitter/></a>
+            <a href="https://www.instagram.com/urbandriveautos/" className="hover:text-orange-500 text-2xl text-rose-700 "><FaInstagram/></a>
           </div>
         </div>
       
@@ -46,7 +46,7 @@ export function FooterMain() {
           <p className="text-center">
             Copyright © {new Date().getFullYear()}{" "}
             <a
-              href="https://urbandrive.co.ke"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-orange-600 font-medium text-orange-500"
@@ -55,7 +55,7 @@ export function FooterMain() {
             </a>
             . Designed by{" "}
             <a
-              href="https://greenbear.co.ke"
+              href="https://gbt.co.ke/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-green-500 font-medium text-green-700"

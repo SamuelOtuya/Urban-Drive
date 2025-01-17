@@ -1,56 +1,69 @@
+
 import { Card } from "flowbite-react";
 import { FaCalendarAlt, FaCar } from "react-icons/fa";
 import { GiGasPump } from "react-icons/gi";
-import car from "../../assets/car.png";
 import { useNavigate } from "react-router-dom";
-import { VehicleType } from "../../types/types";
 
-export function VehicleCard({vehicle}:{vehicle:VehicleType}) {
+export function VehicleCard({ vehicle }:any) {
   const navigate = useNavigate();
 
   return (
     <Card
-      onClick={() => navigate(`/single-car/${vehicle.id}-${vehicle.make}-${vehicle.model}`)}
-      renderImage={() => (
-        
-        <div className="max-w-sm relative">
-          <img 
-            src={vehicle.images} 
-            alt="Toyota HiAce" 
-            className="w-full h-48 object-cover rounded-t-lg sm:h-60 md:h-72 lg:h-80 transition-transform duration-300 ease-out-in transform hover:scale-110"
-          />
-          <div className="absolute bottom-2 left-8 flex gap-2">
-            <span className="bg-orange-500 text-white px-2 py-1 rounded-md text-xs sm:text-sm">
-              Locally Used
-            </span>
-            <span className="bg-green-500 text-white px-2 py-1 rounded-md text-xs sm:text-sm">
-              Available
-            </span>
-          </div>
-        </div>
-        
-      )}
+      onClick={() =>
+        navigate(`/single-car/${vehicle.id}-${vehicle.make}-${vehicle.model}`)
+      }
+      className="flex flex-col h-full shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer"
     >
-      <h4 className="text-xl font-bold text-orange-500 sm:text-xl md:text-xl">
-        {vehicle.title}
-      </h4>
-      <h3 className="text-xl font-bold text-gray-900 sm:text-xl md:text-xl">
-        {vehicle.price}
-      </h3>
-      <div className="flex flex-wrap items-center justify-between text-gray-600 space-x-4">
-        <div className="flex items-center gap-1 text-sm sm:text-base">
-          <FaCar />
-          <span>4WD</span>
+      {/* Image Section with Improved Sizing */}
+      <div className="relative w-full  h-full aspect-[4/3] overflow-hidden rounded-t-lg">
+        <img
+          src={vehicle.images}
+          alt={vehicle.title}
+          className="absolute inset-0 w-full h-full object-contain bg-gray-100"
+          onError={(e) => {
+             "/api/placeholder/400/300"; // Fallback image
+          }}
+        />
+        {/* Badges */}
+        <div className="absolute top-2 left-2 flex gap-2 z-10">
+          <span className="bg-orange-500 text-white px-2 py-1 rounded-md text-xs sm:text-sm shadow-md">
+            Locally Used
+          </span>
+          <span className="bg-green-500 text-white px-2 py-1 rounded-md text-xs sm:text-sm shadow-md">
+            Available
+          </span>
         </div>
-        <div className="flex items-center gap-1 text-sm sm:text-base">
-          <FaCalendarAlt />
-          <span>{vehicle.year}</span>
+      </div>
+
+      {/* Vehicle Details */}
+      <div className="p-4 flex-grow flex flex-col justify-between">
+        <div>
+          <h4 className="text-lg font-semibold text-orange-500 truncate">
+            {vehicle.title}
+          </h4>
+          <h3 className="text-xl font-bold text-gray-900 mt-1">
+            KSH {vehicle.price?.toLocaleString() ?? '0'}
+          </h3>
         </div>
-        <div className="flex items-center gap-1 text-sm sm:text-base">
-          <GiGasPump />
-          <span>{vehicle.fuel_type}</span>
+
+        {/* Icons and Specs */}
+        <div className="grid grid-cols-3 gap-2 text-gray-600 mt-4">
+          <div className="flex items-center gap-1 text-sm">
+            <FaCar className="text-orange-500" />
+            <span>4WD</span>
+          </div>
+          <div className="flex items-center gap-1 text-sm">
+            <FaCalendarAlt className="text-orange-500" />
+            <span>{vehicle.year}</span>
+          </div>
+          <div className="flex items-center gap-1 text-sm">
+            <GiGasPump className="text-orange-500" />
+            <span>{vehicle.fuel_type}</span>
+          </div>
         </div>
       </div>
     </Card>
   );
 }
+
+export default VehicleCard;
