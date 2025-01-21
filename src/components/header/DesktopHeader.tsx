@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { FaFacebook, FaInstagram, FaPhoneAlt, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import logo from "../../assets/logo.png";
 import { IoMail } from "react-icons/io5";
@@ -26,7 +26,7 @@ export function DesktopHeader() {
   return (
     <div>
       {/* Top Header */}
-      <div className="bg-orange-500 text-white p-3">
+      <div className="bg-[#e86e25] text-white p-3">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex gap-4">
             <FaFacebook href="https://www.facebook.com/urbandriveautosltd/"/>
@@ -58,8 +58,8 @@ export function DesktopHeader() {
                   <button
                     className={`px-4 py-2 rounded ${
                       activeTab === tab.name
-                        ? "bg-orange-500 text-white"
-                        : "hover:text-orange-500"
+                        ? "bg-[#e86e25] text-white"
+                        : "hover:text-[#e86e25]"
                     }`}
                     onClick={() => setActiveTab(tab.name)}
                   >

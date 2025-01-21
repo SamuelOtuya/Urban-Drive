@@ -8,6 +8,7 @@ import FAQs from "./pages/FAQs";
 import SingleCar from "./pages/SingleCar";
 import SearchPage from "./pages/SearchPage";
 import Blogs from "./pages/Blogs";
+import SingleBlog from "./pages/SingleBlog";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/blog" element={<Blogs/>}/>
         <Route path="/single-car/:id" element={<SingleCar/>}/>
         <Route path="/search" element={<SearchPage/>}/>
+        <Route path="single-blog/:id" element={<SingleBlog/>}/>
       </Routes>
     </DefaultLayout>
   );

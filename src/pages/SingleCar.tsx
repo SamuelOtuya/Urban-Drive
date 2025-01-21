@@ -159,19 +159,42 @@ export default function CarDetails() {
 
 
         <div className="space-y-4">
-          <Button color="info" className="w-full">
-            <MdDriveEta className='mr-2'/>
-           Book a Test Drive
-          </Button>
-          <Button color="failure" className="w-full">
-            <MdLocalOffer className="mr-2" /> Make an Offer
-          </Button>
-          <Button color="warning" className="w-full">
-            <BsTelephoneForward className="mr-2" /> Request a call Back
-          </Button>
-          <Button color="success" className="w-full">
-            <FaWhatsapp className="mr-2" href='https://api.whatsapp.com/send?phone=254770070300'/> WhatsApp Message
-          </Button>
+        <Button 
+  color="info" 
+  className="w-full" 
+  onClick={() => window.open('https://example.com/test-drive', '_blank')}
+>
+  <MdDriveEta className='mr-2' />
+  Book a Test Drive
+</Button>
+
+<Button 
+  color="failure" 
+  className="w-full" 
+  onClick={() => window.open('https://example.com/make-offer', '_blank')}
+>
+  <MdLocalOffer className="mr-2" /> 
+  Make an Offer
+</Button>
+
+<Button 
+  color="warning" 
+  className="w-full" 
+  onClick={() => window.open('https://example.com/request-call', '_blank')}
+>
+  <BsTelephoneForward className="mr-2" /> 
+  Request a Call Back
+</Button>
+
+<Button 
+  color="success" 
+  className="w-full" 
+  onClick={() => window.open('https://api.whatsapp.com/send?phone=254770070300', '_blank')}
+>
+  <FaWhatsapp className="mr-2" /> 
+  WhatsApp Message
+</Button>
+
 
           <div className="bg-white p-4 rounded-lg shadow mt-6">
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
