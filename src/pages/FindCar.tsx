@@ -23,7 +23,7 @@ const FindCar = () => {
 
         const res = await API.get("client/home-listing",{
             params:{
-                limit:8
+                limit:200
             }
         })
         setVehicles(res.data.cars)
@@ -44,7 +44,7 @@ const FindCar = () => {
       <div className="m-5">
      <div className="pt-5"><SearchForm/></div>
      
-     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-2">
+     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-2 sm:px-20">
      {
         vehicles.map((vehicle,index)=>{
           return(

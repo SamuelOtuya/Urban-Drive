@@ -47,7 +47,7 @@ export function DesktopHeader() {
 
       {/* Navigation */}
       <div>
-        <nav className="bg-[#e2d9ce] p-5">
+        <nav className="bg-[#e2d9ce] p-6">
           <div className="container mx-auto flex justify-between items-center">
             <div>
               <img src={logo} alt="Urban Drive Logo" className="h-8 w-25" />

@@ -69,7 +69,7 @@ const LogoCarousel = () => {
   };
 
   return (
-    <div className="relative w-full max-w-6xl mx-auto px-4">
+    <div className="relative w-full max-w-8xl mx-auto px-16">
       {/* Navigation Arrows */}
       <button
         onClick={handlePrevious}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { HomeCouresel } from "../components/HomeCouresel";
+import { HomeCarousel } from "../components/HomeCouresel";
 import SearchForm from "../components/Main/SearchForm";
 import { VehicleCard } from "../components/Main/VehicleCard";
 import { VehicleType } from "../types/types";
@@ -7,6 +7,7 @@ import API from "../api/API";
 import LogoCarousel from "../components/Main/logoCouresel";
 import ad1 from "../assets/ad1.png";
 import BlogComponent from "../components/Main/Blogcouresel";
+import Blog from "../components/Main/Blog";
 // import BrandCarousel from "../components/Main/BrandsCouresel";
 
 const Homepage = () => {
@@ -45,10 +46,11 @@ const Homepage = () => {
 
  
   return (
+    
     <div>
-     <div className="h-full"><HomeCouresel/></div>
-     <div className="m-5">
-     <div className="m-5 justify-center flex text-2xl font-bold">
+     <div className=" max-h-full"><HomeCarousel/></div>
+     <div className="m-4">
+     <div className="m-5 justify-center flex text-3xl font-bold">
       Latest Vehicles
       </div>
      <div className="border-t border-orange-600 md:col-span-2"></div>
@@ -56,7 +58,7 @@ const Homepage = () => {
      <div className="pt-10"><SearchForm/></div>
      
      
-     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-2">
+     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-2 sm:px-20">
       {
         vehicles.map((vehicle,index)=>{
           return(
@@ -66,14 +68,14 @@ const Homepage = () => {
       }
 </div>
 
-<div className="flex justify-center mb-8 px-4 mt-2">
-        <button className="bg-orange-500 text-white px-6 py-2 rounded hover:bg-orange-600 transition-colors">
+<div className="flex justify-center mb-8 px-4 mt-2 ">
+        <button className="bg-orange-500 text-white text-lg px-6 py-2 rounded hover:bg-orange-600 transition-colors">
           View all our stock
         </button>
       </div>
       <LogoCarousel/>
 
-      <div className="flex space-x-4 overflow-hidden w-full max-w-screen-lg mx-auto">
+      <div className="flex space-x-4 overflow-hidden w-full mx-auto px-20 py-2">
   <div className="w-1/2 overflow-hidden">
     <img
       src={ad1}
@@ -89,7 +91,7 @@ const Homepage = () => {
     />
   </div>
 </div>
-<BlogComponent/>
+<Blog/>
 
 
 

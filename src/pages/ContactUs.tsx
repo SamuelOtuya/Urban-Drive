@@ -1,6 +1,7 @@
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { Contact } from '../components/ContactUs/contactcard'
 import Map from '../components/Map'
+import ContactForm from '../components/ContactUs/contactform'
 
 export const ContactUs = () => {
   return (
@@ -46,7 +47,7 @@ export const ContactUs = () => {
               </div>
           </div>
           <div className='col-span-2'>
-              <Contact />
+              <ContactForm />
           </div>
       </div><div className="container mx-auto px-4">
               <h2 className="text-3xl font-bold mb-6">Our Location</h2>

@@ -1,10 +1,9 @@
-
 import { Card } from "flowbite-react";
 import { FaCalendarAlt, FaCar } from "react-icons/fa";
 import { GiGasPump } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
 
-export function VehicleCard({ vehicle }:any) {
+export function VehicleCard({ vehicle }: any) {
   const navigate = useNavigate();
 
   return (
@@ -12,15 +11,15 @@ export function VehicleCard({ vehicle }:any) {
       onClick={() =>
         navigate(`/single-car/${vehicle.id}-${vehicle.make}-${vehicle.model}`)
       }
-      className="flex flex-col h-full shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer"
+      className="flex flex-col h-full shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer p-0 overflow-hidden"
     >
-      {/* Image Section with Improved Sizing */}
-      <div className="relative w-full  h-full aspect-[4/3] overflow-hidden rounded-t-lg">
+      {/* Image Section with Slim Margins */}
+      <div className="relative w-full h-[220px] sm:h-[250px] md:h-[280px] overflow-hidden">
         <img
           src={vehicle.images}
           alt={vehicle.title}
-          className="absolute inset-0 w-full h-full object-contain bg-gray-100"
-          onError={(e) => {
+          className="absolute inset-0 w-full h-full object-cover"
+          onError={() => {
              "/api/placeholder/400/300"; // Fallback image
           }}
         />
@@ -36,7 +35,7 @@ export function VehicleCard({ vehicle }:any) {
       </div>
 
       {/* Vehicle Details */}
-      <div className="p-4 flex-grow flex flex-col justify-between">
+      <div className="px-3 pb-3 flex-grow flex flex-col justify-between">
         <div>
           <h4 className="text-lg font-semibold text-orange-500 truncate">
             {vehicle.title}
@@ -47,7 +46,7 @@ export function VehicleCard({ vehicle }:any) {
         </div>
 
         {/* Icons and Specs */}
-        <div className="grid grid-cols-3 gap-2 text-gray-600 mt-4">
+        <div className="grid grid-cols-3 gap-2 text-gray-600 mt-2">
           <div className="flex items-center gap-1 text-sm">
             <FaCar className="text-orange-500" />
             <span>4WD</span>
