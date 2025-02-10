@@ -1,5 +1,4 @@
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
-import { Contact } from '../components/ContactUs/contactcard'
 import Map from '../components/Map'
 import ContactForm from '../components/ContactUs/contactform'
 

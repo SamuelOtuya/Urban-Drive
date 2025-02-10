@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { Link} from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaPhoneAlt, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import logo from "../../assets/logo.png";
 import { IoMail } from "react-icons/io5";
@@ -12,7 +11,7 @@ type Tab = {
 };
 
 export function DesktopHeader() {
-  const [activeTab, setActiveTab] = useState("Home");
+  const location = useLocation(); // Get the current route
 
   const tabs: Tab[] = [
     { name: "Home", link: "/" },
@@ -29,14 +28,22 @@ export function DesktopHeader() {
       <div className="bg-[#e86e25] text-white p-3">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex gap-4">
-            <FaFacebook href="https://www.facebook.com/urbandriveautosltd/"/>
-            <FaTwitter href="https://x.com/UrbanDriveAutos?t=FqAaqFH3g5-vusYu4zKAuw"/>
-            <FaInstagram href="https://www.instagram.com/urbandriveautos/"/>
-            <FaWhatsapp href="https://api.whatsapp.com/send?phone=254770070300"/>
-            <FaPhoneAlt href=""/>
-            <span>(+254) 770070300</span>
-            <IoMail />
-            <span>info@urbandrive.co.ke</span>
+            <a href="https://www.facebook.com/urbandriveautosltd/" target="_blank">
+              <FaFacebook className=""/>
+            </a>
+            <a href="https://x.com/UrbanDriveAutos?t=FqAaqFH3g5-vusYu4zKAuw" target="_blank">
+              <FaTwitter className=""/>
+            </a>
+            <a href="https://www.instagram.com/urbandriveautos/" target="_blank">
+              <FaInstagram className=""/>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=254770070300" target="_blank">
+              <FaWhatsapp className="" />
+            </a>
+            <FaPhoneAlt className="" />
+            <span className="text-sm">(+254) 770070300</span>
+            <IoMail className="text-lg"/>
+            <span className="text-sm">info@urbandrive.co.ke</span>
           </div>
           <div className="flex gap-4">
             <button className="bg-white text-orange-500 px-4 py-1 rounded">Register</button>
@@ -46,31 +53,28 @@ export function DesktopHeader() {
       </div>
 
       {/* Navigation */}
-      <div>
-        <nav className="bg-[#e2d9ce] p-6">
-          <div className="container mx-auto flex justify-between items-center">
-            <div>
-              <img src={logo} alt="Urban Drive Logo" className="h-8 w-25" />
-            </div>
-            <div className="flex gap-4">
-              {tabs.map((tab) => (
-                <Link key={tab.name} to={tab.link}>
-                  <button
-                    className={`px-4 py-2 rounded ${
-                      activeTab === tab.name
-                        ? "bg-[#e86e25] text-white"
-                        : "hover:text-[#e86e25]"
-                    }`}
-                    onClick={() => setActiveTab(tab.name)}
-                  >
-                    {tab.name}
-                  </button>
-                </Link>
-              ))}
-            </div>
+      <nav className="bg-[#e2d9ce] p-6">
+        <div className="container mx-auto flex justify-between items-center">
+          <div>
+            <img src={logo} alt="Urban Drive Logo" className="h-8 w-25" />
           </div>
-        </nav>
-      </div>
+          <div className="flex gap-4">
+            {tabs.map((tab) => (
+              <Link key={tab.name} to={tab.link}>
+                <button
+                  className={`px-4 py-2 rounded ${
+                    location.pathname === tab.link
+                      ? "bg-[#e86e25] text-white"
+                      : "hover:text-[#e86e25]"
+                  }`}
+                >
+                  {tab.name}
+                </button>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </nav>
     </div>
   );
 }

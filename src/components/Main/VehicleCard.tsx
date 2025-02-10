@@ -26,10 +26,10 @@ export function VehicleCard({ vehicle }: any) {
         {/* Badges */}
         <div className="absolute top-2 left-2 flex gap-2 z-10">
           <span className="bg-orange-500 text-white px-2 py-1 rounded-md text-xs sm:text-sm shadow-md">
-            Locally Used
+            {vehicle.condition}
           </span>
           <span className="bg-green-500 text-white px-2 py-1 rounded-md text-xs sm:text-sm shadow-md">
-            Available
+            {vehicle.status}
           </span>
         </div>
       </div>
@@ -49,7 +49,7 @@ export function VehicleCard({ vehicle }: any) {
         <div className="grid grid-cols-3 gap-2 text-gray-600 mt-2">
           <div className="flex items-center gap-1 text-sm">
             <FaCar className="text-orange-500" />
-            <span>4WD</span>
+            <span>{vehicle.color}</span>
           </div>
           <div className="flex items-center gap-1 text-sm">
             <FaCalendarAlt className="text-orange-500" />

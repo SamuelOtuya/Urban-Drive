@@ -27,7 +27,7 @@ export function HomeCarousel() {
   };
 
   return (
-    <div className="relative w-full h-60 sm:h-80 xl:h-96 2xl:h-[500px] overflow-hidden">
+    <div className="relative w-full h-52 sm:h-80 xl:h-96 2xl:h-[500px] overflow-hidden">
       <AnimatePresence>
         <motion.img
           key={currentIndex}

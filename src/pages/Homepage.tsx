@@ -6,7 +6,6 @@ import { VehicleType } from "../types/types";
 import API from "../api/API";
 import LogoCarousel from "../components/Main/logoCouresel";
 import ad1 from "../assets/ad1.png";
-import BlogComponent from "../components/Main/Blogcouresel";
 import Blog from "../components/Main/Blog";
 // import BrandCarousel from "../components/Main/BrandsCouresel";
 
@@ -28,7 +27,7 @@ const Homepage = () => {
 
         const res = await API.get("client/home-listing",{
             params:{
-                limit:8
+                limit:12
             }
         })
         setVehicles(res.data.cars)

@@ -1,13 +1,10 @@
 "use client";
 
 import { Drawer, Sidebar, TextInput } from "flowbite-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import {
   HiChartPie,
-  HiClipboard,
-  HiCollection,
-  HiInformationCircle,
   HiLogin,
   HiMenu,
   HiPencil,
@@ -19,12 +16,32 @@ import {
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const [isSticky, setIsSticky] = useState(false);
+
   const handleClose = () => setIsOpen(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <div className="flex px-5 py-3 justify-between items-center">
-      <img src={logo} alt="Urban Drive Logo" className="h-10 w-30" />
+    <div
+        className={`w-full bg-white shadow-md transition-all duration-300 ${
+          isSticky ? "fixed top-0 left-0 z-50" : "relative"
+        }`}
+      >
+      <div className="flex px-5 py-3 justify-between items-center shadow-md">
+      <img src={logo} alt="Urban Drive Logo" className="h-8 w-28" />
         <button onClick={() => setIsOpen(true)}>
           <HiMenu className="text-2xl text-slate-600" />
         </button>
@@ -77,32 +94,15 @@ export function MobileNav() {
                       FAQs
                     </Sidebar.Item>
                   </Sidebar.ItemGroup>
-                  {/* <Sidebar.ItemGroup>
-                    <Sidebar.Item
-                      href="https://github.com/themesberg/flowbite-react/"
-                      icon={HiClipboard}
-                    >
-                      Docs
-                    </Sidebar.Item>
-                    <Sidebar.Item
-                      href="https://flowbite-react.com/"
-                      icon={HiCollection}
-                    >
-                      Components
-                    </Sidebar.Item>
-                    <Sidebar.Item
-                      href="https://github.com/themesberg/flowbite-react/issues"
-                      icon={HiInformationCircle}
-                    >
-                      Help
-                    </Sidebar.Item>
-                  </Sidebar.ItemGroup> */}
+                  
                 </Sidebar.Items>
               </div>
             </div>
           </Sidebar>
         </Drawer.Items>
       </Drawer>
+      </div>
     </>
   );
 }
+
