@@ -4,15 +4,12 @@ import { Drawer, Sidebar, TextInput } from "flowbite-react";
 import { useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import {
-  HiChartPie,
   HiHome,
-  HiLogin,
   HiMenu,
   HiPencil,
   HiPhoneOutgoing,
   HiQuestionMarkCircle,
   HiSearch,
-  HiShoppingBag,
   HiUsers,
 } from "react-icons/hi";
 import { Link } from "react-router-dom";

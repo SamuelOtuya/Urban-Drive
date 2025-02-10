@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 // import BrandCarousel from "../components/Main/BrandsCouresel";
 
 const Homepage = () => {
-  const [loading,setLoading] = useState<boolean>(false);
+  const [,setLoading] = useState<boolean>(false);
   const [vehicles,setVehicles] = useState<VehicleType[]>([])
   
 
