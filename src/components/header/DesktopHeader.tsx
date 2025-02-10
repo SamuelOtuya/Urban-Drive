@@ -23,9 +23,9 @@ export function DesktopHeader() {
   ];
 
   return (
-    <div>
+    <div className="">
       {/* Top Header */}
-      <div className="bg-[#e86e25] text-white p-3">
+      <div className="bg-[#e86e25] text-white p-3 px-28">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex gap-4">
             <a href="https://www.facebook.com/urbandriveautosltd/" target="_blank">
@@ -46,17 +46,18 @@ export function DesktopHeader() {
             <span className="text-sm">info@urbandrive.co.ke</span>
           </div>
           <div className="flex gap-4">
-            <button className="bg-white text-orange-500 px-4 py-1 rounded">Register</button>
-            <button className="bg-white text-orange-500 px-4 py-1 rounded">Login</button>
+            <Link to="https://admin.urbandrive.co.ke"><button className="bg-white text-orange-500 px-4 py-1 rounded">Login</button></Link>
           </div>
         </div>
       </div>
 
       {/* Navigation */}
       <nav className="bg-[#e2d9ce] p-6">
-        <div className="container mx-auto flex justify-between items-center">
+        <div className="container mx-auto flex justify-between items-center px-20">
           <div>
+            <Link to="/">
             <img src={logo} alt="Urban Drive Logo" className="h-8 w-25" />
+            </Link>
           </div>
           <div className="flex gap-4">
             {tabs.map((tab) => (

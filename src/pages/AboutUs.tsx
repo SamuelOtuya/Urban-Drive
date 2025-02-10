@@ -3,6 +3,7 @@ import { HiSpeakerphone } from "react-icons/hi";
 import aboutus from "../assets/aboutus.png";
 // import { Slider } from "../components/About/slider";
 import vid from "../assets/vid.jpg";
+import { Component } from "../components/component";
 
 const AboutUs = () => {
   return (
@@ -74,8 +75,8 @@ const AboutUs = () => {
               </li>
             </ul>
           </div>
-          <div className="rounded-lg shadow-lg bg-white">
-            {/* <Slider/> */}
+          <div className="rounded-lg shadow-lg bg-transparent object-center">
+        <Component/>
           </div>
         </div>
       </div>

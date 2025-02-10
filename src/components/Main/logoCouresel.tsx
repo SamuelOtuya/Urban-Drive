@@ -14,7 +14,7 @@ const LogoCarousel = () => {
   useEffect(() => {
     const fetchLogos = async () => {
       try {
-        const response = await fetch('https://admin.daytonaautosolutions.com/client/brands');
+        const response = await fetch('https://admin.urbandrive.co.ke/client/brands');
         const data = await response.json();
         setBrands(data.brands); // Assuming the response has a "brands" array
       } catch (error) {

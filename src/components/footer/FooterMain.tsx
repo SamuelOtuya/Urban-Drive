@@ -8,7 +8,7 @@ import { IoMail } from "react-icons/io5";
 
 export function FooterMain() {
   return (
-          <Footer className="bg-slate-950 text-white py-5 px-4">
+          <Footer className="bg-slate-950 text-white py-5 px-4 border border-b-0">
        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h3 className="text-xl font-bold mb-4">Contact</h3>

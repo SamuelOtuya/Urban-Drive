@@ -7,6 +7,7 @@ import API from "../api/API";
 import LogoCarousel from "../components/Main/logoCouresel";
 import ad1 from "../assets/ad1.png";
 import Blog from "../components/Main/Blog";
+import { Link } from "react-router-dom";
 // import BrandCarousel from "../components/Main/BrandsCouresel";
 
 const Homepage = () => {
@@ -68,9 +69,11 @@ const Homepage = () => {
 </div>
 
 <div className="flex justify-center mb-8 px-4 mt-2 ">
+        <Link to="/find-car">
         <button className="bg-orange-500 text-white text-lg px-6 py-2 rounded hover:bg-orange-600 transition-colors">
           View all our stock
         </button>
+        </Link>
       </div>
       <LogoCarousel/>
 

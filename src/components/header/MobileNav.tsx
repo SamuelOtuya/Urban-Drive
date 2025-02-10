@@ -5,13 +5,17 @@ import { useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import {
   HiChartPie,
+  HiHome,
   HiLogin,
   HiMenu,
   HiPencil,
+  HiPhoneOutgoing,
+  HiQuestionMarkCircle,
   HiSearch,
   HiShoppingBag,
   HiUsers,
 } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +45,7 @@ export function MobileNav() {
         }`}
       >
       <div className="flex px-5 py-3 justify-between items-center shadow-md">
-      <img src={logo} alt="Urban Drive Logo" className="h-8 w-28" />
+      <Link to='/'><img src={logo} alt="Urban Drive Logo" className="h-8 w-28" /></Link>
         <button onClick={() => setIsOpen(true)}>
           <HiMenu className="text-2xl text-slate-600" />
         </button>
@@ -66,19 +70,19 @@ export function MobileNav() {
                 </form>
                 <Sidebar.Items>
                   <Sidebar.ItemGroup>
-                    <Sidebar.Item href="/" icon={HiChartPie}>
+                    <Sidebar.Item href="/" icon={HiHome}>
                       Home
                     </Sidebar.Item>
                     <Sidebar.Item
                       href="/find-car"
-                      icon={HiShoppingBag}
+                      icon={HiSearch}
                     >
                       Find a Car
                     </Sidebar.Item>
                     <Sidebar.Item href="/about" icon={HiUsers}>
                       About Us
                     </Sidebar.Item>
-                    <Sidebar.Item href="/contact" icon={HiLogin}>
+                    <Sidebar.Item href="/contact" icon={HiPhoneOutgoing}>
                       Contact Us
                     </Sidebar.Item>
                     <Sidebar.Item
@@ -89,7 +93,7 @@ export function MobileNav() {
                     </Sidebar.Item>
                     <Sidebar.Item
                       href="/faqs"
-                      icon={HiPencil}
+                      icon={HiQuestionMarkCircle}
                     >
                       FAQs
                     </Sidebar.Item>

@@ -24,6 +24,7 @@ const App = () => {
         <Route path="/single-car/:id" element={<SingleCar/>}/>
         <Route path="/search" element={<SearchPage/>}/>
         <Route path="single-blog/:id" element={<SingleBlog/>}/>
+        <Route path='*' element={<Homepage/>} />
       </Routes>
     </DefaultLayout>
   );
